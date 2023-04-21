@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_styles %} 
+    <link rel="stylesheet" href="{% static "main_page/allposts.css/" %}">
+{% endblock css_styles %}
+    
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for data in info %}
+        <div class="col-xl-6">
+            <div class="card text-center bg-primarybg-dark " >
+                <img src="../media/{{data.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{data.title}}</h5>
+                    <a href="{% url 'deatil_page' data.slug %}" class="btn btn-dark">Check it out</a>
+                </div>
+            </div>
+        </div>      
+        {% endfor %}
+        
+    </div>
+</div>
+    
+{% endblock content %}
+
+

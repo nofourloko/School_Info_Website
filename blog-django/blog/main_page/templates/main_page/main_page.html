@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_styles %}
+    <link rel = "stylesheet" href="{% static "main_page/main_page.css/" %}">
+{% endblock css_styles %}
+{% block content %}
+<main>
+    <div class="container py-4" >
+
+      <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Hej</h1>
+          <p class="col-md-8 fs-4">Mozecie sprawdzic sobie ostatnie zadania i ich tresci oraz dodac wlasne</p>
+          <a class="btn btn-dark btn-lg" type="button" href="/allposts">Check all posts</a>
+        </div>
+      </div>
+  
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+              <h2>Dodaj nowy post</h2>
+              <a class="btn btn-outline-secondary" type="button" href="{% url 'form_url' %}">Check all posts</a>    
+            </div>
+          </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+            <h2>Sprawdz ostatni post</h2>
+            <a class="btn btn-outline-secondary" type="button" href="{% url 'deatil_page' info.slug%}">sprawdz</a>    
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </main>
+    
+{% endblock content %}

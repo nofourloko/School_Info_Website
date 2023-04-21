@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_styles %} 
+    <link rel="stylesheet" href="{% static "main_page/form.css" %}">
+{% endblock css_styles %}
+
+
+{% block content %}
+    <div class = "login_container">
+        <h1> Login </h1>
+        {% if text %}
+        <h3>{{text}}</h3>
+        {% endif %}
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-control {% if field.errors %}errors{% endif %}">
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.errors }}
+        </div>
+        {% endfor %}
+        <button class = "btn btn-light btn-lg text-center" type="submit">Submit</button>
+    </form>
+    <div class = "button_container">
+        <a class = "btn btn-dark btn-lg text-center " href =  {% url 'register_url' %}>Register</a>
+    </div>
+{% endblock content %}

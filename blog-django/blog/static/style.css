@@ -1,0 +1,14 @@
+body{
+    font-family: 'Schibsted Grotesk', sans-serif;
+    background-color: #F8F2ED!important;
+}
+.navbar{
+    font-family: 'Schibsted Grotesk', sans-serif;
+    font-size: 32px;
+    padding: 20px 10px;
+}
+
+li{
+    margin: 0px 10px;
+}
+

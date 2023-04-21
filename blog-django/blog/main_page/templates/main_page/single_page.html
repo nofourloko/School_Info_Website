@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_styles %}
+    <link rel = "stylesheet" href="{% static "main_page/single_page.css/" %}">
+
+{% endblock css_styles %}
+{% block content %}
+<div class="container text-center">
+    <div class="row justify-content-md-center">
+      <div class="col  columna1" >
+        <div>
+            <img src="../media/{{info.image}}" alt="...">
+        </div>
+      </div>
+      <div class="col columna2" >
+        <h1 >{{info.title}}</h1>
+        <h3> {{info.desc}}</h3>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

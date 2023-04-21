@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_styles %} 
+    <link rel="stylesheet" href="{% static "main_page/chat.css/" %}">
+{% endblock css_styles %}
+
+
+{% block content %}
+    <div class = "container-redirect">
+        <h1>You must login first to see messages </h1>
+        <p> Click the link on navbar or use this link on page </p>
+        <a class = "btn btn-dark btn-lg text-center" href =  {% url 'login_url' %} >login</a>
+    </div>
+{% endblock content %}

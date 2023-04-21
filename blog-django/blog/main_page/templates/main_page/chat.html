@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_styles %} 
+    <link rel="stylesheet" href="{% static "main_page/chat.css" %}">
+{% endblock css_styles %}
+
+
+{% block content %}
+  <div class="messagesContainer" id = "messageContainer">
+    {% for message in messages %}
+      {% if request.session.current_user == message.user %}
+        <div class="messageDiv rightAlign">
+          <p>{{ message.user }}: {{ message.message }}</p>
+        </div>
+      {% else %}
+        <div class="messageDiv">
+          <p>{{ message.user }}: {{ message.message }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+    <script>
+      var objDiv = document.getElementById("messageContainer");
+      objDiv.scrollTop = objDiv.scrollHeight;
+    </script>
+  </div>
+
+  <style>
+    .rightAlign {
+      align-self: flex-end;
+    }
+    .rightAlign > p {
+      padding: 10px;
+      color: black;
+      background-color: white;
+  }
+
+  </style>
+
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {%for field in form %}
+        <div class="form-control {% if field.errors %}errors{% endif %}">
+          {{ field.label_tag }}
+          {{ field }}
+          {{ field.errors }}
+          <button class = "btn btn-dark btn-md text-center" type="submit">Submit</button>
+        </div>
+      {% endfor %}
+    </form>
+{% comment %} <script>
+
+  function scrollToBottom() {
+    el = document.getElementsByClassName("messagesContainer")
+    el.scrollTop = el.scrollHeight;
+    console.log("test")
+  }
+
+  setInterval(scrollToBottom, 1000)
+</script> {% endcomment %}
+{% endblock content %}

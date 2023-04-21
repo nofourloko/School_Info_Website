@@ -1,0 +1,85 @@
+body{
+  font-family: 'Schibsted Grotesk', sans-serif;
+  background-color: #F8F2ED!important;
+}
+
+form {
+    margin: 3rem auto;
+    width: 90%;
+    max-width: 30rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #F8F2ED!important;
+    
+  }
+  .form-control {
+    margin-bottom: 1rem;
+    background-color: #F8F2ED!important;
+  }
+  
+  .form-control input{
+    font: inherit;
+    padding: 0.25rem;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 10rem;
+    background-color: #F8F2ED!important;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+
+  }
+  .form-control textarea {
+    background-color: #F8F2ED!important;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  }
+  
+  .form-control input:focus {
+    border-color: #1f0050;
+    outline: none;
+    background-color: #f4eeff;
+  }
+  
+  .form-control label {
+    font-weight: bold;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+  }
+  
+  .errorlist {
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0;
+    color: #680000;
+  }
+  
+  .errors input {
+    border-color: #680000;
+    background-color: #fde3e3;
+  }
+  
+  .errors label {
+    color: #680000;
+  }
+  .button_container,.login_container{
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0px auto;
+      text-align: center;
+  }
+
+  
+
+  .login_container{
+    padding: 10px 0px 0px 0px;
+  }
